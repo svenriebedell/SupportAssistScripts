@@ -1,6 +1,6 @@
 <#
 _author_ = dell
-_version_ = 1.0.1
+_version_ = 1.0.2
 _Dev_Status_ = Test
 Copyright ©2025 Dell Inc. or its subsidiaries. All Rights Reserved.
 
@@ -21,6 +21,7 @@ limitations under the License.
 
         1.0.0   inital version
         1.0.1   Correct output text and format of value registered time
+        1.0.2   SupportAssist change Name to SupportAssist switch to file check and not app name to cover SA 4.5 and SA 4.9 installations
 
 #>
 
@@ -370,13 +371,14 @@ function Test-RegistryStatus
 $SADiagnosticPath = $env:ProgramW6432 + "\Dell\SupportAssistAgent\bin\"
 $SADiagnosticExe = "SelfDiagnosis.exe"
 $SADiagnosticFull = $SADiagnosticPath + $SADiagnosticExe
+$SAPath = "$env:ProgramFiles\Dell\SupportAssistAgent\bin\SupportAssistAgent.exe"
 
 #########################################################################################################
 ####                                    Program Section                                              ####
 #########################################################################################################
 
 Write-Host "**************************************************************************************"
-Write-Host "* Version: 1.0.1                                                                     *"
+Write-Host "* Version: 1.0.2                                                                     *"
 Write-Host "* File: Detection_SA_registration_failed.ps1                                         *"
 Write-Host "**************************************************************************************"
 
@@ -385,7 +387,7 @@ try
         # check if Dell SupportAssist for Business is installed
         Write-Output "Checking Windows Application install database for Dell SupportAssist for Business install"
         Write-Output "This will take a few minutes"
-        $CheckInstall = Get-CimInstance -ClassName Win32_Product | Where-Object {$_.Name -like "Dell SupportAssist*Business*"}
+        $CheckInstall = Test-Path -Path $SAPath
 
         if ($null -ne $CheckInstall)
             {
