@@ -59,7 +59,8 @@ To retrieve the warranty details of a device by calling the SupportAssist System
 get-SupportAssistCIMData -Output System
 
 Example for CIM direct
-<img width="751" height="281" alt="image" src="https://github.com/user-attachments/assets/b2cc34b3-f7a5-4eb4-9f29-4a344e524811" />
+<img width="538" height="186" alt="image" src="https://github.com/user-attachments/assets/50ef232c-81e6-4d0e-ba95-d044b9b13730" />
+
 
 Same with the function
 <img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
