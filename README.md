@@ -65,5 +65,5 @@ Example for CIM direct
 Same with the function
 <img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
 
-new script will follwing.
+new scripts will follwing.
 
