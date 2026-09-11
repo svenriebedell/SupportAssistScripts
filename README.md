@@ -96,6 +96,12 @@ This script package includes a detection script and a remediation script to iden
 
 This script is designed to be used with Dell Techdirect Remediation or Microsoft Intune.
 
+**Example Intune Remediation**
+<img width="1498" height="529" alt="image" src="https://github.com/user-attachments/assets/465d22c0-6411-4924-bff2-9a718499b801" />
+
+**Dell TechDirect Remediation**
+<img width="1077" height="499" alt="image" src="https://github.com/user-attachments/assets/4177d45e-5202-4eda-92df-746dfb662ee9" />
+
 ---
 
 ## Getting SupportAssist CIM Data
@@ -124,10 +130,12 @@ To retrieve the warranty details of a device by calling the SupportAssist System
 get-SupportAssistCIMData -Output System
 
 Example for CIM direct
+
 <img width="538" height="186" alt="image" src="https://github.com/user-attachments/assets/50ef232c-81e6-4d0e-ba95-d044b9b13730" />
 
 
 Same with the function
+
 <img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
 
 ---
