@@ -13,6 +13,7 @@ This repository contains a library of PowerShell scripts and projects designed f
 | `01_Detection_SA_registation_failed.ps1` | Checks the registration status of Dell SupportAssist via WMI and provides automated troubleshooting logs. | Detection | Detection and Remediation |
 | `get-SupportAssistCIMData.ps1` | A reusable function that retrieves Dell SupportAssist CIM data and translates numeric status codes into clear text. | Function | FunctionSet |
 | `SA_Create_CIM_Classes.ps1` | Updates by SupportAssist CLI create XML files for Scan and Install. These XML files are then converted to CIM classes. | Converter | XML to CIM |
+| `SA_Clean_older_Scan_XMLFiles.ps1` | Helping delete older Scan/Install XML-files from a device. | Tool | Cleaner |
 
 ---
 ## Intune Compliance
