@@ -1,0 +1,60 @@
+{
+    "Rules":[ 
+        { 
+           "SettingName":"MissingCriticalUpdates",
+           "Operator":"isEquals",
+           "DataType":"Int64",
+           "Operand":"0",
+           "MoreInfoUrl":"https://apps.microsoft.com/detail/xpdccxdn26vnbt?hl=en-US",
+           "RemediationStrings":[ 
+              { 
+                 "Language":"en_US",
+                 "Title":"Device missing critical updates",
+                 "Description": "Critical drivers, firmware, or BIOS updates are missing on this device. Please run Dell SupportAssist to install the required updates to maintain system security and performance."
+              }
+           ]
+        },
+        { 
+         "SettingName":"UpdatesRequiredRestart",
+         "Operator":"isEquals",
+         "DataType":"boolean",
+         "Operand": false,
+         "MoreInfoUrl":"https://www.dell.com/support/product-details/en-us/product/supportassist-business-pcs/resources/manuals",
+         "RemediationStrings":[ 
+               { 
+                  "Language":"en_US",
+                  "Title":"Updates require restart",
+                  "Description": "One or more updates require a restart to complete. Please restart your device to apply the updates. If you have to resync your device by Microsoft Company Portal to check compliance again."
+               }
+            ]
+         },
+        { 
+         "SettingName":"SAVersionSupported",
+         "Operator":"isEquals",
+         "DataType":"boolean",
+         "Operand": true,
+         "MoreInfoUrl":"https://apps.microsoft.com/detail/9wzdncrfj3pz?hl=en-US",
+         "RemediationStrings":[ 
+               { 
+                  "Language":"en_US",
+                  "Title":"SupportAssist Version supported",
+                  "Description": "Checking Company Portal for SupportAssist version 5.2 or later and install this version"
+               }
+            ]
+         },
+        { 
+         "SettingName":"DiagnoseError",
+         "Operator":"isEquals",
+         "DataType":"boolean",
+         "Operand": false,
+         "MoreInfoUrl":"https://www.dell.com/support/product-details/en-us/product/supportassist-business-pcs/resources/manuals",
+         "RemediationStrings":[ 
+               { 
+                  "Language":"en_US",
+                  "Title":"Diagnose create Error",
+                  "Description": "Contact your Administrator to check this problem"
+               }
+            ]
+         }
+     ]
+}

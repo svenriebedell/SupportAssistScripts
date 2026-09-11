@@ -1,19 +1,53 @@
-# SupportAssistScripts
+# SupportAssist Projects
 
-This repository contains a library of PowerShell scripts designed for the deployment, management, and troubleshooting of Dell SupportAssist.
+This repository contains a library of PowerShell scripts and projects designed for the deployment, management, and troubleshooting of Dell SupportAssist for Business PCs.
 
-## Available Scripts
+## Available Scripts/Projects
 
-| Script | Description |
+| Script | Description | Category | Folder |
+|---|---|---|---|
+| `Intune_Compliance_Sensor_DSA_Missing_critical_drivers.ps1` | Using with MS Intune Compliance Sensor to detect missing critical drivers | Intune Compliance | IntuneCompliance |
+| `Intune_Compliance_Sensor_DSA_Missing_critical_drivers.json` | Using with MS Intune Compliance Sensor to detect missing critical drivers | Intune Compliance | IntuneCompliance |
+| `02_Detection_SA_missing_Critical_DriverUpdates.ps1` | Checks the registration status of Dell SupportAssist via WMI and provides automated troubleshooting logs. | Detection | Detection and Remediation |
+| `02_Remediation_SA_missing_Critical_DriverUpdates` | Checks the registration status of Dell SupportAssist via WMI and provides automated troubleshooting logs. | Remediation | Detection and Remediation |
+| `01_Detection_SA_registation_failed.ps1` | Checks the registration status of Dell SupportAssist via WMI and provides automated troubleshooting logs. | Detection | Detection and Remediation |
+| `get-SupportAssistCIMData.ps1` | A reusable function that retrieves Dell SupportAssist CIM data and translates numeric status codes into clear text. | Function | FunctionSet |
+| `SA_Create_CIM_Classes.ps1` | Updates by SupportAssist CLI create XML files for Scan and Install. These XML files are then converted to CIM classes. | Converter | XML to CIM |
+
+---
+## Intune Compliance
+
+### Intune Compliance Sensor for Missing Critical Drivers
+
+This project provides a Microsoft Intune Compliance Sensor that detects missing critical drivers on Dell Business PCs. The sensor uses PowerShell scripts to query Dell SupportAssist and identify devices with missing critical drivers, allowing IT administrators to enforce compliance policies.
+
+**Files:**
+- `Intune_Compliance_Sensor_DSA_Missing_critical_drivers.ps1` - PowerShell script for detecting missing critical drivers
+- `Intune_Compliance_Sensor_DSA_Missing_critical_drivers.json` - JSON configuration for Intune Compliance Sensor
+
+**Usage:**
+1. Deploy the PowerShell script as an Intune Compliance Script
+2. Configure the Compliance Sensor in Intune to run the script
+3. Set up compliance policies based on the sensor results
+
+**Detection Logic:**
+- Queries Dell SupportAssist via WMI to check driver status
+- Identifies missing critical drivers
+- Returns compliance status for Intune policies
+
+Explain the compliance status:
+| Status | Description |
 |---|---|
-| `Detection_SA_registration_failed.ps1` | Checks the registration status of Dell SupportAssist via WMI and provides automated troubleshooting logs. |
-| `get-SupportAssistCIMData.ps1` | A reusable function that retrieves Dell SupportAssist CIM data and translates numeric status codes into human-readable text. |
+| DiagnoseError | Error occurred during diagnosis like script errors |
+| MissingCriticalUpdates | Missing critical updates found on the device |
+| SAVersionSupported | SupportAssist version is supported, Version is not 5.2 or higher |
+| UpdatesRequiredRestart | Updates require restart to complete update, as example Dell BIOS update |
 
 ---
 
 ## Checking Registration Status
 
-**Script:** `Detection_SA_registration_failed.ps1`
+**Script:** `01_Detection_SA_registration_failed.ps1`
 
 During automated deployments, it can be difficult to confirm whether a device has successfully registered with Dell TechDirect. Instead of manually cross-referencing your asset lists, this script queries Windows Management Instrumentation (WMI) to verify the SupportAssist registration status.
 
@@ -31,7 +65,25 @@ You can drill down into the Event Viewer (or similar monitoring tools) for more 
 
 You can use simulare tools too.
 
+---
 
+## Detection and Remediation for use with Dell Techdirect Remediation or Microsoft Intune
+
+### Detection and Remediation script to detect and remediate missing critical drivers
+
+This script package includes a detection script and a remediation script to identify and install missing critical drivers on Dell devices.
+
+**Files:**
+- `02_Detection_MissingCriticalDrivers.ps1` - Detection script
+- `02_Remediation_InstallMissingCriticalDrivers.ps1` - Remediation script
+
+**Usage:**
+- Run the detection script to identify missing critical drivers
+- Run the remediation script to install missing critical drivers
+
+This script is designed to be used with Dell Techdirect Remediation or Microsoft Intune.
+
+---
 
 ## Getting SupportAssist CIM Data
 
@@ -65,5 +117,34 @@ Example for CIM direct
 Same with the function
 <img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
 
-new script will follwing.
+---
 
+## Getting SupportAssist XML to CIM Conversion
+
+**Script:** `SA_Create_CIM_Classes.ps1`
+
+This PowerShell script reads SupportAssist XML files and creates CIM classes. All datas of SupportAssist are converted to CIM classes and stored in the specified namespace.
+
+### Parameters
+
+The script accepts the following parameters:
+
+- `-Namespace`: The CIM namespace where the classes will be created (default: `root/SupportAssist`)
+- `-XMLCustomPath`: The path to the directory containing the XML files (default: `C:\Temp\DSA`)
+
+
+### Example
+
+Read all SupportAssist CIM data from XML files and create CIM classes at Namespace `root/SupportAssist`:
+
+ .\SA_Create_CIM_Classes.ps1 -Namespace "root/SupportAssist" -$XMLCustomPath "C:\Temp\DSA"
+
+Example for CIM *Scan* Details
+<img width="538" height="186" alt="image" src="https://github.com/user-attachments/assets/50ef232c-81e6-4d0e-ba95-d044b9b13730" />
+
+
+Example for *Installation* status
+<img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
+
+
+new script will following.
