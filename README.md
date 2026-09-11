@@ -172,21 +172,55 @@ Example for CIM *Scan* Details
 
 *Scan package view*
 
+CLI Call: Get-CimInstance -Namespace root/SupportAssist -ClassName DSA_DriverScan
+
 <img width="1162" height="350" alt="image" src="https://github.com/user-attachments/assets/e7f7b0ee-ffae-482b-8206-a0164eb807cb" />
 
 
 *Scan summary*
+
+CLI Call: Get-CimInstance -Namespace root/SupportAssist -ClassName DSA_AvailableUpdates
 <img width="480" height="269" alt="image" src="https://github.com/user-attachments/assets/1ba943a6-e3c7-4b3a-8eb6-89bf3d7299a9" />
 
 
 Example for *Installation* status
 *Package view*
 
+CLI Call: Get-CimInstance -Namespace root/SupportAssist -ClassName DSA_DriverInstall
 <img width="708" height="321" alt="image" src="https://github.com/user-attachments/assets/58783cda-984d-4356-8784-7b877a61cdae" />
 
 *Install summary*
 
+CLI Call: Get-CimInstance -Namespace root/SupportAssist -ClassName DSA_InstallStatus
 <img width="653" height="125" alt="image" src="https://github.com/user-attachments/assets/60b3197b-5b5f-4074-960c-958f1f0a4637" />
+
+---
+
+## Clean older SupportAssist XML files from report path or profile
+
+**Script:** `SA_Clean_older_Scan_XMLFiles.ps1`
+
+This PowerShell is for using with your Dell SupportAssist for business Commandline actions. This script will clean up older XML files.
+
+### Parameters
+
+The script accepts the following parameters:
+
+PARAMETER XMLType
+   Specifies the type of XML files to clean. Options are "All", "Scan", or "Install".
+   Default is "All".
+
+PARAMETER CleanupMode
+   Specifies the cleanup mode for XML files. Options are "DeleteAll" or "Keep1" through "Keep10".
+   Default is "Keep2".
+
+PARAMETER CustomTempPath
+   Specifies the custom temporary path for XML files.
+   Default is "C:\temp".
+
+EXAMPLE
+   .\SA_Clean_older_Scan_XMLFiles.ps1 -CustomTempPath "C:\Temp\DSA" -CleanupMode "Keep3" -XMLType "Install"
+   Cleans XML files in the specified custom path, keeping only the 3 latest versions of Install XML files.
 
 
 ---
