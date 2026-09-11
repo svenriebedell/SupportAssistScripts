@@ -160,6 +160,7 @@ The script accepts the following parameters:
 *Scan*
 
 <img width="684" height="509" alt="2026-08-10 17_28_15-Quick Assist" src="https://github.com/user-attachments/assets/231bba11-100e-4371-91e2-cf300e81cff2" />
+
 *Install*
 
 <img width="927" height="362" alt="2026-08-12 11_49_04-Quick Assist" src="https://github.com/user-attachments/assets/b4992f7e-3cb3-4758-a4e4-603f0803d21a" />
