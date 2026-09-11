@@ -156,6 +156,7 @@ get-SupportAssistCIMData -Output System
 **Screenshots**
 
 *CIM direct query*
+
 <img width="538" height="186" alt="image" src="https://github.com/user-attachments/assets/50ef232c-81e6-4d0e-ba95-d044b9b13730" />
 
 *Using the function*
@@ -189,6 +190,7 @@ This PowerShell script reads SupportAssist XML files and creates CIM classes. Al
 **Screenshots**
 
 *XML file structure - Scan*
+
 <img width="684" height="509" alt="2026-08-10 17_28_15-Quick Assist" src="https://github.com/user-attachments/assets/231bba11-100e-4371-91e2-cf300e81cff2" />
 
 *XML file structure - Install*
