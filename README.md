@@ -36,15 +36,8 @@ This project provides a Microsoft Intune Compliance Sensor that detects missing 
 - Identifies missing critical drivers
 - Returns compliance status for Intune policies
 
-Checked conditionals
+**Checked conditionals**
 <img width="988" height="345" alt="Screenshot 2026-07-30 141700" src="https://github.com/user-attachments/assets/4c49882c-8e32-4009-96cc-89fe2b535b3c" />
-
-Admin report
-<img width="1004" height="886" alt="image" src="https://github.com/user-attachments/assets/75ffba1f-a4f6-42e0-b760-bacf89700064" />
-
-User UI
-<img width="633" height="382" alt="image" src="https://github.com/user-attachments/assets/4edd5f36-76a4-408b-97be-fa020a811b33" />
-
 
 Explain the compliance status:
 | Status | Description |
@@ -53,6 +46,13 @@ Explain the compliance status:
 | MissingCriticalUpdates | Missing critical updates found on the device |
 | SAVersionSupported | SupportAssist version is supported, Version is not 5.2 or higher |
 | UpdatesRequiredRestart | Updates require restart to complete update, as example Dell BIOS update |
+
+**Intune Compliance report**
+<img width="1004" height="886" alt="image" src="https://github.com/user-attachments/assets/75ffba1f-a4f6-42e0-b760-bacf89700064" />
+
+**User Interface by Company Portal**
+<img width="596" height="405" alt="image" src="https://github.com/user-attachments/assets/76cad226-8099-491b-90d3-b797abbf07b5" />
+<img width="633" height="382" alt="image" src="https://github.com/user-attachments/assets/4edd5f36-76a4-408b-97be-fa020a811b33" />
 
 ---
 
