@@ -96,7 +96,7 @@ This script package includes a detection script and a remediation script to iden
 
 This script is designed to be used with Dell Techdirect Remediation or Microsoft Intune.
 
-**Example Intune Remediation**
+**Intune Remediation**
 <img width="1498" height="529" alt="image" src="https://github.com/user-attachments/assets/465d22c0-6411-4924-bff2-9a718499b801" />
 
 **Dell TechDirect Remediation**
@@ -156,17 +156,38 @@ The script accepts the following parameters:
 
 ### Example
 
-Read all SupportAssist CIM data from XML files and create CIM classes at Namespace `root/SupportAssist`:
+**How looking the XML Files**
+*Scan*
+
+<img width="684" height="509" alt="2026-08-10 17_28_15-Quick Assist" src="https://github.com/user-attachments/assets/231bba11-100e-4371-91e2-cf300e81cff2" />
+*Install*
+
+<img width="927" height="362" alt="2026-08-12 11_49_04-Quick Assist" src="https://github.com/user-attachments/assets/b4992f7e-3cb3-4758-a4e4-603f0803d21a" />
+
+The script read all SupportAssist data from XML files and create CIM classes at Namespace `root/SupportAssist`:
 
  .\SA_Create_CIM_Classes.ps1 -Namespace "root/SupportAssist" -$XMLCustomPath "C:\Temp\DSA"
 
 Example for CIM *Scan* Details
-<img width="684" height="509" alt="2026-08-10 17_28_15-Quick Assist" src="https://github.com/user-attachments/assets/231bba11-100e-4371-91e2-cf300e81cff2" />
+
+*Scan package view*
+
+<img width="1162" height="350" alt="image" src="https://github.com/user-attachments/assets/e7f7b0ee-ffae-482b-8206-a0164eb807cb" />
+
+
+*Scan summary*
+<img width="480" height="269" alt="image" src="https://github.com/user-attachments/assets/1ba943a6-e3c7-4b3a-8eb6-89bf3d7299a9" />
 
 
 Example for *Installation* status
-<img width="927" height="362" alt="2026-08-12 11_49_04-Quick Assist" src="https://github.com/user-attachments/assets/b4992f7e-3cb3-4758-a4e4-603f0803d21a" />
+*Package view*
+
+<img width="708" height="321" alt="image" src="https://github.com/user-attachments/assets/58783cda-984d-4356-8784-7b877a61cdae" />
+
+*Install summary*
+
+<img width="653" height="125" alt="image" src="https://github.com/user-attachments/assets/60b3197b-5b5f-4074-960c-958f1f0a4637" />
 
 
-
-new script will following.
+---
+**new script will following.**
