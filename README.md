@@ -47,10 +47,12 @@ Explain the compliance status:
 | SAVersionSupported | SupportAssist version is supported, Version is not 5.2 or higher |
 | UpdatesRequiredRestart | Updates require restart to complete update, as example Dell BIOS update |
 
+
 **Intune Compliance report**
 <img width="1004" height="886" alt="image" src="https://github.com/user-attachments/assets/75ffba1f-a4f6-42e0-b760-bacf89700064" />
 
 **User Interface by Company Portal**
+
 <img width="596" height="405" alt="image" src="https://github.com/user-attachments/assets/76cad226-8099-491b-90d3-b797abbf07b5" />
 <img width="633" height="382" alt="image" src="https://github.com/user-attachments/assets/4edd5f36-76a4-408b-97be-fa020a811b33" />
 
@@ -151,11 +153,12 @@ Read all SupportAssist CIM data from XML files and create CIM classes at Namespa
  .\SA_Create_CIM_Classes.ps1 -Namespace "root/SupportAssist" -$XMLCustomPath "C:\Temp\DSA"
 
 Example for CIM *Scan* Details
-<img width="538" height="186" alt="image" src="https://github.com/user-attachments/assets/50ef232c-81e6-4d0e-ba95-d044b9b13730" />
+<img width="684" height="509" alt="2026-08-10 17_28_15-Quick Assist" src="https://github.com/user-attachments/assets/231bba11-100e-4371-91e2-cf300e81cff2" />
 
 
 Example for *Installation* status
-<img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
+<img width="927" height="362" alt="2026-08-12 11_49_04-Quick Assist" src="https://github.com/user-attachments/assets/b4992f7e-3cb3-4758-a4e4-603f0803d21a" />
+
 
 
 new script will following.
