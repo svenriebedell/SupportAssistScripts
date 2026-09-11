@@ -13,16 +13,18 @@ This repository contains a library of PowerShell scripts and projects designed f
 | `01_Detection_SA_registration_failed.ps1` | Checks SupportAssist registration status via WMI | Detection | Detection and Remediation |
 | `get-SupportAssistCIMData.ps1` | Retrieves SupportAssist CIM data with readable text translation | Function | FunctionSet |
 | `SA_Create_CIM_Classes.ps1` | Converts SupportAssist XML files to CIM classes | Converter | XML to CIM |
-| `SA_Clean_older_Scan_XMLFiles.ps1` | Cleans up older Scan/Install XML files | Tool | Cleaner |
+| `SA_Clean_older_Scan_XMLFiles.ps1` | Cleans up older Scan/Install XML files | Tool | XML Cleaner |
+
 
 ---
+
 
 ## 📊 Intune Compliance
 
 ### Intune Compliance Sensor for Missing Critical Drivers
 
 **Overview**
-This project provides a Microsoft Intune Compliance Sensor that detects missing critical drivers on Dell Business PCs. The sensor uses PowerShell scripts to query Dell SupportAssist and identify devices with missing critical drivers, allowing IT administrators to enforce compliance policies.
+This project provides a Microsoft Intune Compliance Sensor that detects missing critical drivers on Dell Business PCs. The sensor use a PowerShell script to query Dell SupportAssist and identify devices with missing critical drivers, allowing IT administrators to enforce compliance policies.
 
 **Files**
 - `Intune_Compliance_Sensor_DSA_Missing_critical_drivers.ps1` - PowerShell script for detecting missing critical drivers
@@ -34,7 +36,7 @@ This project provides a Microsoft Intune Compliance Sensor that detects missing 
 3. Set up compliance policies based on the sensor results
 
 **Detection Logic**
-- Queries Dell SupportAssist via WMI to check driver status
+- Queries Dell SupportAssist via Command line interface to check driver status
 - Identifies missing critical drivers
 - Returns compliance status for Intune policies
 
@@ -44,7 +46,7 @@ This project provides a Microsoft Intune Compliance Sensor that detects missing 
 |---|---|
 | DiagnoseError | Error occurred during diagnosis (e.g., script errors) |
 | MissingCriticalUpdates | Missing critical updates found on the device |
-| SAVersionSupported | SupportAssist version is supported (version is not 5.2 or higher) |
+| SAVersionSupported | SupportAssist version is supported (version is 5.2.1 or higher) |
 | UpdatesRequiredRestart | Updates require restart to complete (e.g., Dell BIOS update) |
 
 **Screenshots**
@@ -56,10 +58,13 @@ This project provides a Microsoft Intune Compliance Sensor that detects missing 
 <img width="1004" height="886" alt="image" src="https://github.com/user-attachments/assets/75ffba1f-a4f6-42e0-b760-bacf89700064" />
 
 *User Interface by Company Portal*
+
 <img width="596" height="405" alt="image" src="https://github.com/user-attachments/assets/76cad226-8099-491b-90d3-b797abbf07b5" />
 <img width="633" height="382" alt="image" src="https://github.com/user-attachments/assets/4edd5f36-76a4-408b-97be-fa020a811b33" />
 
+
 ---
+
 
 ## 🔍 Checking Registration Status
 
@@ -68,7 +73,7 @@ This project provides a Microsoft Intune Compliance Sensor that detects missing 
 **Script:** `01_Detection_SA_registration_failed.ps1`
 
 **Overview**
-During automated deployments, it can be difficult to confirm whether a device has successfully registered with Dell TechDirect. Instead of manually cross-referencing your asset lists, this script queries Windows Management Instrumentation (WMI) to verify the SupportAssist registration status.
+During automated deployments, it can be difficult to confirm whether a device has successfully registered with Dell TechDirect. Instead of manually cross-referencing your asset lists, this script queries Common Information Model (CIM) to verify the SupportAssist registration status.
 
 If the registration check fails, the script automatically executes `selfdiagnose.exe` and logs the output to the Windows Event Viewer. This provides immediate, actionable details for troubleshooting why the registration failed.
 
@@ -85,7 +90,9 @@ This script serves as an excellent Microsoft Intune Detection Rule, making it ea
 
 **Note:** You can use similar monitoring tools for detailed telemetry analysis.
 
+
 ---
+
 
 ## 🛠️ Detection and Remediation
 
@@ -110,11 +117,13 @@ This script package includes a detection script and a remediation script to iden
 *Dell TechDirect Remediation*
 <img width="1077" height="499" alt="image" src="https://github.com/user-attachments/assets/4177d45e-5202-4eda-92df-746dfb662ee9" />
 
+
 ---
+
 
 ## 🔧 Getting SupportAssist CIM Data
 
-### SupportAssist CIM Data Retrieval Function
+### SupportAssist Common Information Model (CIM) Data Retrieval Function
 
 **Script:** `get-SupportAssistCIMData.ps1`
 
@@ -152,11 +161,13 @@ get-SupportAssistCIMData -Output System
 *Using the function*
 <img width="1077" height="372" alt="image" src="https://github.com/user-attachments/assets/f99a6af7-cc6b-49a2-ad60-b28b087bce1a" />
 
+
 ---
 
-## 🔄 XML to CIM Conversion
 
-### SupportAssist XML to CIM Class Converter
+## 🔄 XML File to Common Information Model (CIM) Conversion
+
+### SupportAssist XML to Common Information Model (CIM) Class Converter
 
 **Script:** `SA_Create_CIM_Classes.ps1`
 
@@ -209,7 +220,7 @@ Get-CimInstance -Namespace root/SupportAssist -ClassName DSA_InstallStatus
 
 ---
 
-## 🧹 XML File Cleanup
+## 🧹 SupportAssist CLI XML File Cleanup
 
 ### SupportAssist XML File Cleaner
 
@@ -232,7 +243,9 @@ This PowerShell script is designed for use with Dell SupportAssist for Business 
 ```
 This command cleans XML files in the specified custom path, keeping only the 3 latest versions of Install XML files.
 
+
 ---
+
 
 ## 📝 Additional Information
 
